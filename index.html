@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leah Cruz | Analytics Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --purple: #9333EA;
+      --purple-light: #A855F7;
+      --purple-glow: rgba(147, 51, 234, 0.3);
+      --black: #0A0A0A;
+      --gray-900: #171717;
+      --gray-800: #262626;
+      --gray-400: #A3A3A3;
+      --gray-300: #D4D4D4;
+      --white: #FAFAFA;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--gray-300);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid var(--gray-800);
+    }
+    
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    
+    .logo {
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--white);
+    }
+    
+    .logo span { color: var(--purple); }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: var(--gray-400);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--purple-light); }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 64px;
+    }
+    
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    
+    .hero-text h1 span { color: var(--purple); }
+    
+    .hero-text h2 {
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--gray-400);
+      margin-bottom: 24px;
+    }
+    
+    .hero-text p {
+      font-size: 16px;
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+    
+    .hero-links {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: var(--purple);
+      color: var(--white);
+    }
+    
+    .btn-primary:hover {
+      background: var(--purple-light);
+      box-shadow: 0 0 20px var(--purple-glow);
+    }
+    
+    .btn-secondary {
+      border: 1px solid var(--gray-800);
+      color: var(--gray-300);
+    }
+    
+    .btn-secondary:hover {
+      border-color: var(--purple);
+      color: var(--purple-light);
+    }
+    
+    .hero-image {
+      position: relative;
+    }
+    
+    .hero-image img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--purple);
+      box-shadow: 0 0 40px var(--purple-glow);
+    }
+    
+    /* Sections */
+    section {
+      padding: 100px 0;
+    }
+    
+    .section-title {
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 48px;
+    }
+    
+    .section-title span { color: var(--purple); }
+    
+    /* About */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    
+    .about-text p { margin-bottom: 16px; }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    
+    .skill-tag {
+      background: var(--gray-900);
+      border: 1px solid var(--gray-800);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    
+    .skill-tag:hover {
+      border-color: var(--purple);
+      color: var(--purple-light);
+    }
+    
+    .skill-tag.highlight {
+      border-color: var(--purple);
+      background: rgba(147, 51, 234, 0.1);
+      color: var(--purple-light);
+    }
+    
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      gap: 24px;
+    }
+    
+    .project-card {
+      background: var(--gray-900);
+      border: 1px solid var(--gray-800);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    
+    .project-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-4px);
+    }
+    
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    
+    .project-card h3 {
+      font-size: 20px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    
+    .project-company {
+      font-size: 14px;
+      color: var(--purple-light);
+    }
+    
+    .project-metric {
+      background: rgba(147, 51, 234, 0.15);
+      color: var(--purple-light);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    
+    .project-card p {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .project-tags span {
+      background: var(--gray-800);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+    
+    /* Contact */
+    .contact-content {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .contact-content p {
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+    
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+    
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-400);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+    
+    .contact-link:hover { color: var(--purple-light); }
+    
+    .contact-link svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--gray-800);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--gray-400);
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
+      .hero-image { order: -1; margin: 0 auto; }
+      .hero-text h1 { font-size: 36px; }
+      .hero-links { justify-content: center; }
+      .about-content { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">leah<span>.</span>cruz</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Hey! I'm <span>Leah.</span></h1>
+          <h2>Analytics Engineer</h2>
+          <p>I build data pipelines, train ML models, and turn messy datasets into actionable insights. Currently crafting analytics solutions with dbt, BigQuery, and a passion for clean code.</p>
+          <div class="hero-links">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face" alt="Leah Cruz">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm an Analytics Engineer based in Orlando, FL with a background in Health Informatics from UCF. I specialize in transforming raw data into business intelligence through modern data stack tools.</p>
+          <p>My journey started with data annotation and evolved into building ML models, optimizing data pipelines, and reducing infrastructure costs by significant margins. I thrive at the intersection of data engineering and machine learning.</p>
+        </div>
+        <div class="skills-grid">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">dbt</span>
+          <span class="skill-tag">BigQuery</span>
+          <span class="skill-tag">Snowflake</span>
+          <span class="skill-tag">Looker</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">DevOps</span>
+          <span class="skill-tag highlight">Claude Code</span>
+          <span class="skill-tag highlight">Copilot</span>
+          <span class="skill-tag highlight">Prompt Eng.</span>
+          <span class="skill-tag">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Project <span>Highlights</span></h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3>BigQuery Cost Optimization</h3>
+              <span class="project-company">CompareCredit</span>
+            </div>
+            <span class="project-metric">50% Cost Reduction</span>
+          </div>
+          <p>Migrated from Dataform to dbt while refactoring SQL queries for optimal performance. Introduced automated testing and data monitoring to enhance reliability.</p>
+          <div class="project-tags">
+            <span>dbt</span><span>BigQuery</span><span>SQL</span><span>Data Quality</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3>dbt Model Refactoring</h3>
+              <span class="project-company">Trainual</span>
+            </div>
+            <span class="project-metric">80% Faster Queries</span>
+          </div>
+          <p>Scaled dbt best practices across the organization by refactoring core models, resulting in thousands of dollars in compute savings and standardized SQL workflows.</p>
+          <div class="project-tags">
+            <span>dbt</span><span>Performance</span><span>SQL</span><span>Documentation</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3>NLP Job Title Classifier</h3>
+              <span class="project-company">Trainual</span>
+            </div>
+            <span class="project-metric">ML Model</span>
+          </div>
+          <p>Trained an NLP model to detect and categorize job titles and referral sources, informing Marketing and Sales on ideal customer personas for targeted outreach.</p>
+          <div class="project-tags">
+            <span>Python</span><span>NLP</span><span>Machine Learning</span><span>Classification</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3>Intent Detection LLM</h3>
+              <span class="project-company">Drift</span>
+            </div>
+            <span class="project-metric">88% Accuracy</span>
+          </div>
+          <p>Refactored and trained a core LLM base model to detect customer intents across thousands of customers in different industries, powering conversational AI workflows.</p>
+          <div class="project-tags">
+            <span>LLM</span><span>NLP</span><span>Model Training</span><span>Intent Detection</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3>Conversation Analytics Report</h3>
+              <span class="project-company">Drift</span>
+            </div>
+            <span class="project-metric">1M+ Utterances</span>
+          </div>
+          <p>Designed a Month-over-Month report categorizing 60+ intent topics into Sales/Support segments, revealing that 76% of customer conversations were Support-related.</p>
+          <div class="project-tags">
+            <span>Looker</span><span>Analytics</span><span>Product Strategy</span><span>dbt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's <span>Connect</span></h2>
+      <div class="contact-content">
+        <p>I'm always open to discussing data engineering, ML projects, or new opportunities.</p>
+        <div class="contact-links">
+          <a href="https://linkedin.com/in/leah-data" class="contact-link" target="_blank">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/leah-mc" class="contact-link" target="_blank">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Leah C. Built with passion and purple pixels.</p>
+    </div>
+  </footer>
+</body>
+</html>
