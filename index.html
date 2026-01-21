@@ -274,6 +274,57 @@
       color: var(--gray-400);
     }
     
+    /* Side Projects */
+    .side-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
+    .side-project-card {
+      background: var(--gray-900);
+      border: 1px solid var(--gray-800);
+      border-radius: 12px;
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+      display: block;
+    }
+    
+    .side-project-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-4px);
+    }
+    
+    .side-project-icon {
+      color: var(--purple);
+      margin-bottom: 16px;
+    }
+    
+    .side-project-card h3 {
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    
+    .side-project-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: var(--gray-400);
+    }
+    
+    .side-project-card .project-tags {
+      margin-bottom: 16px;
+    }
+    
+    .view-link {
+      font-size: 14px;
+      color: var(--purple-light);
+      font-weight: 500;
+    }
+    
     /* Contact */
     .contact-content {
       text-align: center;
@@ -325,6 +376,7 @@
       .hero-links { justify-content: center; }
       .about-content { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .side-projects-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
@@ -336,6 +388,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#side-projects">Side Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -354,7 +407,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face" alt="Leah Cruz">
+          <img src="profile.jpg" alt="Leah Cruz">
         </div>
       </div>
     </div>
@@ -365,7 +418,7 @@
       <h2 class="section-title">About <span>Me</span></h2>
       <div class="about-content">
         <div class="about-text">
-          <p>I'm an Analytics Engineer based in Orlando, FL with a background in Health Informatics from UCF. I specialize in transforming raw data into business intelligence through modern data stack tools.</p>
+          <p>I'm an Analytics Engineer with a background in transforming raw data into business intelligence through modern data stack tools.</p>
           <p>My journey started with data annotation and evolved into building ML models, optimizing data pipelines, and reducing infrastructure costs by significant margins. I thrive at the intersection of data engineering and machine learning.</p>
         </div>
         <div class="skills-grid">
@@ -463,11 +516,42 @@
     </div>
   </section>
 
+  <section id="side-projects">
+    <div class="container">
+      <h2 class="section-title">Side <span>Projects</span></h2>
+      <div class="side-projects-grid">
+        <a href="https://github.com/leah-mc/dbt-analytics-project" target="_blank" class="side-project-card">
+          <div class="side-project-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="32" height="32"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z"/><path stroke-linecap="round" stroke-width="1.5" d="M9 4v16M4 9h5M4 14h5"/></svg>
+          </div>
+          <h3>Retail Data Warehouse</h3>
+          <p>A dbt-core project implementing a layered data warehouse architecture (staging → intermediate → marts → reporting) with CI/CD via GitHub Actions.</p>
+          <div class="project-tags">
+            <span>dbt</span><span>SQL</span><span>CI/CD</span><span>Data Modeling</span>
+          </div>
+          <span class="view-link">View on GitHub →</span>
+        </a>
+        
+        <a href="https://github.com/leah-mc/spotify-top-tracks" target="_blank" class="side-project-card">
+          <div class="side-project-icon">
+            <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </div>
+          <h3>Spotify Top Tracks</h3>
+          <p>Python script that connects to the Spotify API to fetch and analyze your top tracks, exporting results to CSV using pandas.</p>
+          <div class="project-tags">
+            <span>Python</span><span>API</span><span>pandas</span><span>spotipy</span>
+          </div>
+          <span class="view-link">View on GitHub →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Let's <span>Connect</span></h2>
       <div class="contact-content">
-        <p>I'm always open to discussing data engineering, ML projects, or new opportunities.</p>
+        <p>I'm always open to discussing data engineering, ML projects, or new opportunities!</p>
         <div class="contact-links">
           <a href="https://linkedin.com/in/leah-data" class="contact-link" target="_blank">
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -484,7 +568,7 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Leah C. Built with passion and purple pixels.</p>
+      <p>© 2026 Leah Cruz. Built with passion and purple pixels.</p>
     </div>
   </footer>
 </body>
