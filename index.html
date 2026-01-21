@@ -201,13 +201,13 @@
       color: var(--purple-light);
     }
     
-    /* projects */
-    .projects-grid {
+    /* highlights */
+    .highlight-grid {
       display: grid;
       gap: 24px;
     }
     
-    .project-card {
+    .highlight-card {
       background: var(--gray-900);
       border: 1px solid var(--gray-800);
       border-radius: 12px;
@@ -215,30 +215,30 @@
       transition: all 0.3s;
     }
     
-    .project-card:hover {
+    .highlight-card:hover {
       border-color: var(--purple);
       transform: translateY(-4px);
     }
     
-    .project-header {
+    .highlight-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 16px;
     }
     
-    .project-card h3 {
+    .highlight-card h3 {
       font-size: 20px;
       color: var(--white);
       margin-bottom: 4px;
     }
     
-    .project-company {
+    .highlight-company {
       font-size: 14px;
       color: var(--purple-light);
     }
     
-    .project-metric {
+    .highlight-metric {
       background: rgba(147, 51, 234, 0.15);
       color: var(--purple-light);
       padding: 6px 12px;
@@ -247,18 +247,18 @@
       font-weight: 600;
     }
     
-    .project-card p {
+    .highlight-card p {
       font-size: 15px;
       margin-bottom: 20px;
     }
     
-    .project-tags {
+    .highlight-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
     
-    .project-tags span {
+    .highlight-tags span {
       background: var(--gray-800);
       padding: 4px 10px;
       border-radius: 4px;
@@ -266,14 +266,14 @@
       color: var(--gray-400);
     }
     
-    /* side projects */
-    .side-projects-grid {
+    /* projects */
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
     
-    .side-project-card {
+    .project-card {
       background: var(--gray-900);
       border: 1px solid var(--gray-800);
       border-radius: 12px;
@@ -284,33 +284,44 @@
       display: block;
     }
     
-    .side-project-card:hover {
+    .project-card:hover {
       border-color: var(--purple);
       transform: translateY(-4px);
     }
     
-    .side-project-icon {
+    .project-icon {
       color: var(--purple);
       margin-bottom: 16px;
     }
     
-    .side-project-card h3 {
+    .project-card h3 {
       font-size: 18px;
       color: var(--white);
       margin-bottom: 12px;
     }
     
-    .side-project-card p {
+    .project-card p {
       font-size: 14px;
       line-height: 1.6;
       margin-bottom: 16px;
       color: var(--gray-400);
     }
     
-    .side-project-card .project-tags {
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-bottom: 16px;
     }
     
+    .project-tags span {
+      background: var(--gray-800);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+
     .view-link {
       font-size: 14px;
       color: var(--purple-light);
@@ -368,7 +379,7 @@
       .hero-links { justify-content: center; }
       .about-content { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .side-projects-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
@@ -379,8 +390,8 @@
       <a href="#" class="logo"><img src="logo.png" alt="Leah Cruz" style="height: 80px; max-width: 300px; object-fit: contain;"></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#highlights">Highlights</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#side-projects">Side Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -394,7 +405,7 @@
           <h2>Analytics Engineer</h2>
           <p>I build data pipelines, train ML models, and turn messy datasets into actionable insights. Currently crafting analytics solutions with dbt, BigQuery, and a passion for clean code.</p>
           <div class="hero-links">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#highlights" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
           </div>
         </div>
@@ -431,76 +442,76 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="highlights">
     <div class="container">
-      <h2 class="section-title">Project <span>Highlights</span></h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
+      <h2 class="section-title">Career <span>Highlights</span></h2>
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <div class="highlight-header">
             <div>
               <h3>BigQuery Cost Optimization</h3>
-              <span class="project-company">CompareCredit</span>
+              <span class="highlight-company">CompareCredit</span>
             </div>
-            <span class="project-metric">50% Cost Reduction</span>
+            <span class="highlight-metric">50% Cost Reduction</span>
           </div>
           <p>Migrated from Dataform to dbt while refactoring SQL queries for optimal performance. Introduced automated testing and data monitoring to enhance reliability.</p>
-          <div class="project-tags">
+          <div class="highlight-tags">
             <span>dbt</span><span>BigQuery</span><span>SQL</span><span>Data Quality</span>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-header">
+        <div class="highlight-card">
+          <div class="highlight-header">
             <div>
               <h3>dbt Model Refactoring</h3>
-              <span class="project-company">Trainual</span>
+              <span class="highlight-company">Trainual</span>
             </div>
-            <span class="project-metric">80% Faster Queries</span>
+            <span class="highlight-metric">80% Faster Queries</span>
           </div>
           <p>Scaled dbt best practices across the organization by refactoring core models, resulting in thousands of dollars in compute savings and standardized SQL workflows.</p>
-          <div class="project-tags">
+          <div class="highlight-tags">
             <span>dbt</span><span>Performance</span><span>SQL</span><span>Documentation</span>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-header">
+        <div class="highlight-card">
+          <div class="highlight-header">
             <div>
               <h3>NLP Job Title Classifier</h3>
-              <span class="project-company">Trainual</span>
+              <span class="highlight-company">Trainual</span>
             </div>
-            <span class="project-metric">ML Model</span>
+            <span class="highlight-metric">ML Model</span>
           </div>
           <p>Trained an NLP model to detect and categorize job titles and referral sources, informing Marketing and Sales on ideal customer personas for targeted outreach.</p>
-          <div class="project-tags">
+          <div class="highlight-tags">
             <span>Python</span><span>NLP</span><span>Machine Learning</span><span>Classification</span>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-header">
+        <div class="highlight-card">
+          <div class="highlight-header">
             <div>
               <h3>Intent Detection LLM</h3>
-              <span class="project-company">Drift</span>
+              <span class="highlight-company">Drift</span>
             </div>
-            <span class="project-metric">88% Accuracy</span>
+            <span class="highlight-metric">88% Accuracy</span>
           </div>
           <p>Refactored and trained a core LLM base model to detect customer intents across thousands of customers in different industries, powering conversational AI workflows.</p>
-          <div class="project-tags">
+          <div class="highlight-tags">
             <span>LLM</span><span>NLP</span><span>Model Training</span><span>Intent Detection</span>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-header">
+        <div class="highlight-card">
+          <div class="highlight-header">
             <div>
               <h3>Conversation Analytics Report</h3>
-              <span class="project-company">Drift</span>
+              <span class="highlight-company">Drift</span>
             </div>
-            <span class="project-metric">1M+ Utterances</span>
+            <span class="highlight-metric">1M+ Utterances</span>
           </div>
           <p>Designed a Month-over-Month report categorizing 60+ intent topics into Sales/Support segments, revealing that 76% of customer conversations were Support-related.</p>
-          <div class="project-tags">
+          <div class="highlight-tags">
             <span>Looker</span><span>Analytics</span><span>Product Strategy</span><span>dbt</span>
           </div>
         </div>
@@ -508,12 +519,12 @@
     </div>
   </section>
 
-  <section id="side-projects">
+  <section id="projects">
     <div class="container">
       <h2 class="section-title">Side <span>Projects</span></h2>
-      <div class="side-projects-grid">
-        <a href="https://github.com/leah-mc/dbt-analytics-project" target="_blank" class="side-project-card">
-          <div class="side-project-icon">
+      <div class="project-grid">
+        <a href="https://github.com/leah-mc/dbt-analytics-project" target="_blank" class="project-card">
+          <div class="project-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="32" height="32"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z"/><path stroke-linecap="round" stroke-width="1.5" d="M9 4v16M4 9h5M4 14h5"/></svg>
           </div>
           <h3>Retail Data Warehouse</h3>
@@ -524,8 +535,8 @@
           <span class="view-link">View on GitHub →</span>
         </a>
         
-        <a href="https://github.com/leah-mc/spotify-top-tracks" target="_blank" class="side-project-card">
-          <div class="side-project-icon">
+        <a href="https://github.com/leah-mc/spotify-top-tracks" target="_blank" class="project-card">
+          <div class="project-icon">
             <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
           </div>
           <h3>Spotify Top Tracks</h3>
