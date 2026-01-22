@@ -19,5 +19,5 @@ A minimal, responsive portfolio built with HTML, CSS, and JavaScript.
 ## Tech Stack
 
 - HTML5 / CSS3
-- Google Fonts (Inter)
+- Google Fonts
 - Hosted on GitHub Pages
