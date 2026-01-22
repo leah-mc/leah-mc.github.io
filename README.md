@@ -12,9 +12,9 @@ A minimal, responsive portfolio built with HTML, CSS, and JavaScript. Features a
 
 - **Hero** – Introduction and quick links
 - **About** – Background and skills
-- **Project Highlights** – Key work achievements with metrics
-- **Side Projects** – Personal GitHub projects
-- **Contact** – Email, LinkedIn, and GitHub links
+- **Highlights** – Key work achievements with metrics
+- **Projects** – Personal GitHub projects
+- **Contact** – LinkedIn, and GitHub links
 
 ## Tech Stack
 
