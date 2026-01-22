@@ -6,7 +6,7 @@ Personal portfolio website showcasing my work as an Analytics Engineer.
 
 ## About
 
-A minimal, responsive portfolio built with HTML, CSS, and JavaScript. Features a dark theme with purple accents.
+A minimal, responsive portfolio built with HTML, CSS, and JavaScript.
 
 ### Sections
 
